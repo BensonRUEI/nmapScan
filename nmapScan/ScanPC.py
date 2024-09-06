@@ -20,7 +20,7 @@ for network in networks:
     output_file_html = os.path.join(output_dir, f"{network.replace('/', '_')}.html")
     
     # 執行 nmap 並產生 XML 檔案
-    command = f"nmap -sn -v -oX {output_file} {network}"
+    command = f"nmap -n -sn -v -oX {output_file} {network}"
     os.system(command)
     
     # 使用 xsltproc 轉換 XML 為 HTML
@@ -67,7 +67,7 @@ for ip in live_hosts:
     output_file = os.path.join(output_dir, f"{ip}.xml")
     
     # 執行 Nmap 進行端口掃描
-    command = f"nmap -T4 -vvv -oX {output_file} {ip}"
+    command = f"nmap -n -P0 -sS -T4 -vvv -oX {output_file} {ip}"
     os.system(command)
     print(f"Executing: {command}")
     
