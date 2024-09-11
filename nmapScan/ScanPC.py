@@ -20,7 +20,7 @@ for network in networks:
     output_file_html = os.path.join(output_dir, f"{network.replace('/', '_')}.html")
     
     # 執行 nmap 並產生 XML 檔案
-    command = f"nmap -sn -v -oX {output_file} {network}"
+    command = f"nmap -n -sn -v -oX {output_file} {network}"
     os.system(command)
     
     # 使用 xsltproc 轉換 XML 為 HTML
