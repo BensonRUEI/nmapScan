@@ -48,7 +48,7 @@ pip install pandas openpyxl
 ## 執行
 
 ```sh
-python ScanPC.py
+sudo python ScanPC.py
 ```
 
 ### 選用參數
